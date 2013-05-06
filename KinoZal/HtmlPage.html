@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href='bootstrap.css' rel="stylesheet" media="screen" />
+    <link href='bootstrap-responsive.css' rel="stylesheet" media="screen" />
+    <title>Кинозал</title>
+    <script type="text/javascript" src="knockout-2.2.1.js"></script>
+    <script type="text/javascript" src="JavaScript.js"></script>
+
+    <!-- ReSharper disable InvalidValue -->
+    <style type="text/css">
+        .TopH {
+            background-color: #ff8ff9;
+            font: 16em;
+        }
+
+        .header {
+            color: #8e0cae;
+            margin: 0 auto;
+        }
+    </style>
+    <!-- ReSharper restore InvalidValue -->
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row-fluid TopH ">
+            <img class="span2" src="16_1_~1.png" />
+            <h1 class="span7 header">Заказ билетов в кино</h1>
+        </div>
+        <div class="row-fluid">
+            <div class="span7" data-bind="foreach: items">
+                <button class="btn-large" data-bind="id: id , text:text"></button>
+            </div>
+            <div class="span2" data-bind="foreach: items">
+                <button class="btn-large" data-bind="id: id , text:text"></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        ko.applyBindings(new ViewModel11());
+    </script>
+
+
+
+</body>
+</html>
