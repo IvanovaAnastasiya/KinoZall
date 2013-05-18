@@ -2,16 +2,46 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href='css/bootstrap.css' rel="stylesheet" media="screen" />
+    <link href='css/bootstrap-responsive.css' rel="stylesheet" media="screen" />
+    <link href="css/StyleSheet.css" rel="stylesheet" />
     <title>Кинозал</title>
-    <script type="text/javascript" src="JavaScript.js"></script>
-    <script type="text/javascript" src="knockout-2.2.1.js"></script>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
+    <script type='text/javascript' src="js/knockout-2.2.1.js"></script>
+    <script type="text/javascript" src="js/JavaScript.js"></script>
 </head>
 <body>
-    <div data-bind="foreach: items">
-        <button data-bind="id: id , value:text" ></button>
+    <div class="container-fluid ">
+        <header class="row-fluid ">
+            <div class="span10 offset1  row-fluid thumbnail" id="Header1">
+                <img class="span1" src="img\16_1_~1.png" />
+                <h1 class="span8">Заказ билетов в кино</h1>
+                <div class="span2  help-block " id="phone">
+                    <script type="text/javascript">
+                        day = new Date(); hour = day.getHours(); if (hour >= 5 && hour < 12) greeting = "Доброе утро"; else { if (hour >= 12 && hour < 18) greeting = "Добрый день"; else { if (hour >= 18 && hour < 24) greeting = "Добрый вечер"; else { if (hour >= 0 && hour < 5) greeting = "Доброй ночи"; } } } document.write(greeting);
+                    </script>
+                    , Сегодня 
+                    <script type="text/javascript">
+                        var d = new Date();
+                        var day = new Array("Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота");
+                        var month = new Array("января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря");
+                        document.write(day[d.getDay()] + " " + d.getDate() + " " + month[d.getMonth()] + " " + d.getFullYear() + " г.");
+                    </script>
+                </div>
+            </div>
+        </header>
+        <div class="row-fluid">
+            <h2>Сейчас в прокате...</h2>
+        </div>
+        <div class="row-fluid thumbnail" data-bind="foreach: items" id="Conteiner">
+            <a href="#" class="span2 thumbnail" >
+                <img data-bind="id: id , attr: { src: photoUrl, alt: text }"></img>
+            </a>
+        </div>
     </div>
-   
-
-
+    <script>
+        ko.applyBindings(new ViewModel11());
+    </script>
 </body>
 </html>
