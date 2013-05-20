@@ -2,20 +2,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href='css/bootstrap.css' rel="stylesheet" media="screen" />
-    <link href='css/bootstrap-responsive.css' rel="stylesheet" media="screen" />
-    <link href="css/StyleSheet.css" rel="stylesheet" />
     <title>Кинозал</title>
-    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
-    <script type='text/javascript' src="js/knockout-2.2.1.js"></script>
-    <script type="text/javascript" src="js/JavaScript.js"></script>
+    <script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/knockout-2.2.1.js"></script>
+    <script type="text/javascript" src="scripts/cinemaLogic.js"></script>
+    <link href="styles/bootstrap.min.css" rel="stylesheet" media="screen" />
+    <link href="styles/styles.css" rel="stylesheet" />
 </head>
 <body>
     <div class="container-fluid ">
         <header class="row-fluid ">
             <div class="span10 offset1  row-fluid thumbnail" id="Header1">
-                <img class="span1" src="img\16_1_~1.png" />
+                <img class="span1" src="images\16_1_~1.png" />
                 <h1 class="span8">Заказ билетов в кино</h1>
                 <div class="span2  help-block " id="phone">
                     <script type="text/javascript">
@@ -34,14 +33,130 @@
         <div class="row-fluid">
             <h2>Сейчас в прокате...</h2>
         </div>
-        <div class="row-fluid thumbnail" data-bind="foreach: items" id="Conteiner">
-            <a href="#" class="span2 thumbnail" >
-                <img data-bind="id: id , attr: { src: photoUrl, alt: text }"></img>
-            </a>
+        <div class="row-fluid thumbnail">
+            <div class="span3 thumbnail">
+                <img src="images/blood.jpg" style="width: auto; height: auto;" alt="" />
+                <div class="caption">
+                    <h4>Кровью и потом: Анаболики</h4>
+                    <p><small>Однажды тренеру по фитнесу надоело ходить в трениках.Он решил круто изменить свою судьбу и разбогатеть. Нашел двух других незадачливых качков и предложил им план похищения своего клиента-миллионера. Но если в организме мышц больше, чем мозгов, то даже самый лучший план, подсмотренный в экшен-боевике, может не сработать…</small></p>
+                    <div class="btn-group">
+                        <button class="btn btn-success dropdown-toggle" data-toggle="dropdown">Забронировать места<span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#seats2d" role="button" class="btn" data-toggle="modal">2D</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="span3 thumbnail">
+                <img src="images/ironMan.jpg" style="width: auto; height: auto;" alt="" />
+                <div class="caption">
+                    <h4>Железный человек 3 <span class="label label-important">Хит!</span></h4>
+                    <p><small>Когда мир Старка рушится на его глазах по вине неизвестных противников, Тони жаждет найти виновных и свести с ними счеты. Оказавшись в безвыходной ситуации, Старк может рассчитывать только на себя и свою изобретательность, чтобы защитить тех, кто ему дорог.</small></p>
+                    <div class="btn-group">
+                        <button class="btn btn-success dropdown-toggle" data-toggle="dropdown">Забронировать места<span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#seats2d" role="button" class="btn" data-toggle="modal">2D</a></li>
+                            <li><a href="#seats3d" role="button" class="btn" data-toggle="modal">3D</a></li>
+                            <li><a href="#seatsIMAX3d" role="button" class="btn" data-toggle="modal">IMAX 3D</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="span3 thumbnail">
+                <img src="images/cruds.jpg" style="width: auto; height: auto;" alt="" />
+                <div class="caption">
+                    <h4>Семейка Крудс <span class="label label-kids">Детям</span></h4>
+                    <p><small>Землетрясение уничтожило дом доисторической семьи, и теперь Крудсам придётся искать другое пристанище. А вокруг новый и опасный мир! Им на помощь приходит молодой кочевник Малой, передовые взгляды которого наталкиваются на консервативность главы семьи Груга. Но только вместе они смогут выжить и достичь своей цели…</small></p>
+                    <div class="btn-group">
+                        <button class="btn btn-success dropdown-toggle" data-toggle="dropdown">Забронировать места<span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#seats2d" role="button" class="btn" data-toggle="modal">2D</a></li>
+                            <li><a href="#seats3d" role="button" class="btn" data-toggle="modal">3D</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="span3 thumbnail">
+                <img src="images/oblivion.jpg" style="width: auto; height: auto;" alt="" />
+                <div class="caption">
+                    <h4>Обливион</h4>
+                    <p><small>Можно ли скучать по месту, в котором никогда не был, мечтать о девушке, которую никогда не видел? Добро пожаловать в будущее! Мы больше не можем называть Землю своим домом. Мы выиграли войну, но не смогли сохранить планету…</small></p>
+                    <div class="btn-group">
+                        <button class="btn btn-success dropdown-toggle" data-toggle="dropdown">Забронировать места<span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#seats2d" role="button" class="btn" data-toggle="modal">2D</a></li>
+                            <li><a href="#seats3d" role="button" class="btn" data-toggle="modal">3D</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="modal" id="seats2d" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header" id="2dHeader">
+                <h3>2d кинозал</h3>
+            </div>
+                <p class="screen thumbnail"> Экран </p>
+            <div class="modal-body" id="2dBody">
+                <div >
+                    <script>
+                        $("#2dBody").ready(function () {
+                            createSeats(1);
+                        });
+                    </script>
+
+                </div>
+            </div>
+            <div class="modal-footer" id="2dFooter">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Отмена</button>
+                <button class="btn btn-primary">Забронировать</button>
+            </div>
+        </div>
+        <div class="modal" id="seats3d" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header" id="3dHeader">
+                <h3>3d кинозал</h3>
+            </div>
+            <div class="modal-body" id="3dBody">
+                <script>
+                    $("#3dBody").ready(function () {
+                        createSeats(2);
+                    });
+                </script>
+            </div>
+            <div class="modal-footer" id="3dFooter">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Отмена</button>
+                <button class="btn btn-primary">Забронировать</button>
+            </div>
+        </div>
+        <div class="modal" id="seatsIMAX3d" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header" id="IMAX3dheader">
+                <h3>IMAX 3d кинозал</h3>
+            </div>
+            <div class="modal-body" id="IMAX3dbody">
+                <script>
+                    $("#3dBody").ready(function () {
+                        createSeats(3);
+                    });
+                </script>
+            </div>
+            <div class="modal-footer" id="IMAX3dfooter">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Отмена</button>
+                <button class="btn btn-primary">Забронировать</button>
+            </div>
         </div>
     </div>
-    <script>
-        ko.applyBindings(new ViewModel11());
-    </script>
 </body>
+<script>
+    $(document).ready(function () {
+        $("#seats2d").hide();
+        $("#seats3d").hide();
+        $("#seatsIMAX3d").hide();
+    })
+</script>
 </html>

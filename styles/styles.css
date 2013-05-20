@@ -1,0 +1,90 @@
+﻿@font-face {
+    font-family: 'beer_money';
+    src: url("beer_money.eot");
+    src: url('beer_money.eot?#iefix') format('embedded-opentype'),
+         url('beer_money.woff') format('woff'),
+         url('beer_money.ttf') format('truetype');
+}
+
+.thumbnails {
+    padding: 10px;
+    position: inherit;
+}
+a { 
+    background-color: #fff;
+}
+
+
+ header h1 {
+    font-family: beer_money;
+    font-weight: normal;
+    font-size: 70px;
+    margin: 20px auto;
+    text-align: center;
+}
+h2 {
+font-family: beer_money;
+    font-weight: normal;
+}
+#Header1 {
+ background-color: #ffd800;
+}
+#Conteiner{
+ background-color: #ff6a00;
+}
+.thumbnail {
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+    display: block;
+    line-height: 20px;
+    padding: 4px;
+    /*transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1) 0;*/
+ background-color: #ffd800;
+}
+.row-fluid .thumbnail {
+    background-color: #FFFF66;
+}
+
+.labelStyle {
+    color: #009900;
+}
+
+h4 {
+    color: #000000;
+}
+
+small {
+    color: #0000CC;
+}
+
+.zall {
+    margin: 20px;
+    position: inherit;
+    background-color: #00FFFF;
+    vertical-align: middle;
+}
+
+
+.label-kids, .badge-kids { 
+background-color: #f65ce0;
+}
+
+.modal-body {
+
+    height: 300px;
+    overflow-y: auto;
+}
+
+.seat {
+    cursor: default;
+    position: absolute;
+    background-color: #FFCC66;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
+
+p.screen{
+      text-align: center;
+}
